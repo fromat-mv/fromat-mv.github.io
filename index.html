@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FROMAT: Multiview Material Appearance Transfer via Few-Shot Self-Attention Adaptation" />
+    <meta property="og:title" content="FROMAT" />
+    <meta property="og:description" content="Multiview Material Appearance Transfer via Few-Shot Self-Attention Adaptation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="teaser.png" />
+    <meta property="og:url" content="." />
+    <title>FROMAT | Multiview Material Appearance Transfer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-noise"></div>
+    <header class="hero">
+      <nav class="nav">
+        <div class="logo">FROMAT</div>
+        <div class="nav-links">
+          <a href="#abstract">Abstract</a>
+          <a href="#method">Method</a>
+          <a href="#citation">Citation</a>
+        </div>
+      </nav>
+
+      <section class="hero-content reveal">
+        <div class="hero-text">
+          <h1 class="hero-title">FROMAT: Multiview Material Appearance Transfer via Few-Shot Self-Attention Adaptation</h1>
+          <div class="meta">
+            <a class="author-link" href="https://kompanowski.com" target="_blank" rel="noreferrer">Hubert Kompanowski</a>
+            <span>Varun Jampani</span>
+            <span>Aaryaman Vasishta</span>
+            <a class="author-link" href="https://sonhua.github.io/" target="_blank" rel="noreferrer">Binh-Son Hua</a>
+          </div>
+          <div class="cta-row">
+            <a class="btn" href="https://www.arxiv.org/abs/2512.09617" target="_blank" rel="noreferrer">Read on ArXiv</a>
+            <a class="btn btn-ghost btn-disabled" href="#" aria-disabled="true">Code (coming soon)</a>
+            <a class="btn btn-ghost btn-disabled" href="#" aria-disabled="true">Demo (coming soon)</a>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section teaser reveal" id="teaser">
+        <div class=" ">
+          <img src="teaser.png" alt="Teaser collage" />
+        </div>
+        <p class="text-center">Multiview-consistent appearance transfer from a single reference.</p>
+
+      </section>
+
+      <section class="section reveal" id="abstract">
+        <div class="section-header">
+          <h2>Abstract</h2>
+        </div>
+        <div class="panel">
+          <p>
+            Multiview diffusion models have rapidly emerged as a powerful tool for content creation with spatial
+            consistency across viewpoints, offering rich visual realism without requiring explicit geometry and
+            appearance representation. However, compared to meshes or radiance fields, existing multiview diffusion
+            models offer limited appearance manipulation, particularly in terms of material, texture, or style.
+          </p>
+          <p>
+            In this paper, we present a lightweight adaptation technique for appearance transfer in multiview diffusion
+            models. Our method learns to combine object identity from an input image with appearance cues rendered in a
+            separate reference image, producing multi-view-consistent output that reflects the desired materials,
+            textures, or styles. This allows explicit specification of appearance parameters at generation time while
+            preserving the underlying object geometry and view coherence. We leverage three diffusion denoising
+            processes responsible for generating the original object, the reference, and the target images, and perform
+            reverse sampling to aggregate a small subset of layer-wise self-attention features from the object and the
+            reference to influence the target generation. Our method requires only a few training examples to introduce
+            appearance awareness to pretrained multiview models. The experiments show that our method provides a
+            simple yet effective way toward multiview generation with diverse appearance, advocating the adoption of
+            implicit generative 3D representations in practice.
+          </p>
+        </div>
+      </section>
+
+      <section class="section reveal" id="method">
+        <div class="section-header">
+          <h2>Method Overview</h2>
+          <p>Few-shot self-attention adaptation for appearance-aware multiview diffusion.</p>
+        </div>
+        <div class="method-grid">
+          <div class="panel method-image">
+            <a class="method-zoom" href="#method-modal" aria-label="Open method image fullscreen">
+              <img src="method.png" alt="FROMAT method overview" />
+              <span class="zoom-prompt">Click to zoom</span>
+            </a>
+          </div>
+          <div class="panel video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/95ex_QkaDu4?rel=0&modestbranding=1&playsinline=1"
+              title="FROMAT video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="citation">
+        <div class="section-header">
+          <h2>Citation</h2>
+        </div>
+        <div class="panel">
+          <pre class="citation-block">
+@article{kompanowski2025fromat,
+    title={FROMAT: Multiview Material Appearance Transfer via Few-Shot Self-Attention Adaptation},
+    author={Hubert Kompanowski and Varun Jampani and Aaryaman Vasishta and Binh-Son Hua},
+    journal = {arXiv preprint arXiv:2512.09617},
+    year={2025},
+}
+          </pre>
+        </div>
+      </section>
+
+      <section class="section reveal" id="acknowledgements">
+        <div class="section-header">
+          <h2>Acknowledgements</h2>
+        </div>
+        <div class="panel">
+          <p>
+            This work was conducted with the financial support of the Research Ireland Centre for Research Training in
+            Digitally Enhanced Reality (d-real) under Grant No. 18/CRT/6224. For the purpose of Open Access, the author
+            has applied a CC BY public copyright licence to any Author Accepted Manuscript version arising from this
+            submission.
+          </p>
+          <p>
+            This project is supported by Research Ireland under the Research Ireland Frontiers for the Future Programme,
+            award number 22/FFP-P/11522.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-logos">
+        <img src="dreal.png" alt="d-real logo" />
+        <img src="sfi.png" alt="Research Ireland logo" />
+      </div>
+    </footer>
+
+    <div class="modal" id="method-modal" aria-hidden="true" role="dialog" aria-label="Method image fullscreen">
+      <a class="modal-close" href="#method" aria-label="Close fullscreen">Close</a>
+      <img src="method.png" alt="FROMAT method overview fullscreen" />
+      <span class="modal-hint">Click anywhere to close</span>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
