@@ -48,15 +48,27 @@ if (methodZoom && methodModal) {
     methodModal.classList.remove("open");
     methodModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+      if (window.location.hash === "#method-modal") {
+        const base = window.location.pathname + window.location.search;
+        history.replaceState(null, "", base);
+      }
   };
 
-  methodZoom.addEventListener("click", () => {
+    methodZoom.addEventListener("click", (event) => {
+      event.preventDefault();
     methodModal.classList.add("open");
     methodModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
   });
 
   methodModal.addEventListener("click", closeModal);
+    const modalClose = document.querySelector(".modal-close");
+    if (modalClose) {
+      modalClose.addEventListener("click", (event) => {
+        event.preventDefault();
+        closeModal();
+      });
+    }
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && methodModal.classList.contains("open")) {
