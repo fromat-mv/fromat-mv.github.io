@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="FROMAT: Multiview Material Appearance Transfer via Few-Shot Self-Attention Adaptation" />
+    <meta name="description" content="FROMAT: Tri-Stream Feature Routing for Material Appearance Transfer in Generative Novel View Synthesis" />
     <meta property="og:title" content="FROMAT" />
-    <meta property="og:description" content="Multiview Material Appearance Transfer via Few-Shot Self-Attention Adaptation." />
+    <meta property="og:description" content="FROMAT: Tri-Stream Feature Routing for Material Appearance Transfer in Generative Novel View Synthesis." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="teaser.png" />
     <meta property="og:url" content="." />
-    <title>FROMAT | Multiview Material Appearance Transfer</title>
+    <title>FROMAT | Material Appearance Transfer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +33,7 @@
 
       <section class="hero-content reveal">
         <div class="hero-text">
-          <h1 class="hero-title">FROMAT: Multiview Material Appearance Transfer via Few-Shot Self-Attention Adaptation</h1>
+          <h1 class="hero-title">FROMAT: Tri-Stream Feature Routing for Material Appearance Transfer in Generative Novel View Synthesis</h1>
           <div class="meta">
             <div class="author-item">
               <a class="author-name author-link" href="https://kompanowski.com" target="_blank" rel="noreferrer">Hubert Kompanowski</a>
@@ -76,23 +76,8 @@
         </div>
         <div class="panel">
           <p>
-            Multiview diffusion models have rapidly emerged as a powerful tool for content creation with spatial
-            consistency across viewpoints, offering rich visual realism without requiring explicit geometry and
-            appearance representation. However, compared to meshes or radiance fields, existing multiview diffusion
-            models offer limited appearance manipulation, particularly in terms of material, texture, or style.
-          </p>
-          <p>
-            In this paper, we present a lightweight adaptation technique for appearance transfer in multiview diffusion
-            models. Our method learns to combine object identity from an input image with appearance cues rendered in a
-            separate reference image, producing multi-view-consistent output that reflects the desired materials,
-            textures, or styles. This allows explicit specification of appearance parameters at generation time while
-            preserving the underlying object geometry and view coherence. We leverage three diffusion denoising
-            processes responsible for generating the original object, the reference, and the target images, and perform
-            reverse sampling to aggregate a small subset of layer-wise self-attention features from the object and the
-            reference to influence the target generation. Our method requires only a few training examples to introduce
-            appearance awareness to pretrained multiview models. The experiments show that our method provides a
-            simple yet effective way toward multiview generation with diverse appearance, advocating the adoption of
-            implicit generative 3D representations in practice.
+            We present Tri-Stream Feature Routing, a lightweight adaptation framework that enables precise appearance control, including textures, materials, and lighting, within 3D-consistent novel view synthesis (NVS) diffusion models. As generative models increasingly produce frame sequences along complex camera trajectories, the ability to manipulate an object's appearance without compromising its underlying structure becomes critical. Existing frame-based diffusion approaches struggle to decouple appearance from identity, often yielding distorted geometries or failing to reflect visual cues from an appearance exemplar. 
+            Our method addresses these limitations through a self-attention-based adaptation mechanism that learns to route appearance features from a reference image and identity features from the input object, fusing them via a lightweight optimization. This guides the diffusion model to generate faithful, 3D-consistent images of a target object with the desired appearance. Notably, our method learns this generalized routing mechanism from only a few positive examples and generalizes to novel objects and materials. We demonstrate high-quality visual outputs with complex appearance modifications when integrated with state-of-the-art NVS models such as Stable Virtual Camera and Era3D.
           </p>
         </div>
       </section>
@@ -111,7 +96,7 @@
           </div>
           <div class="panel video-frame">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/95ex_QkaDu4?rel=0&modestbranding=1&playsinline=1"
+              src="https://www.youtube-nocookie.com/embed/UUrJx_LgWO4?rel=0&modestbranding=1&playsinline=1"
               title="FROMAT video"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
